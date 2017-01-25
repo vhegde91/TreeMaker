@@ -45,6 +45,15 @@ class BadGlobalMuonTagger : public edm::stream::EDFilter<> {
         bool partnerId(const reco::Muon &mu) const {
             return mu.pt() >= 10 && mu.numberOfMatchedStations() >= 1;
         }
+        bool badTrk(const reco::Muon &mu) const {
+            bool isBadTrkMuLoose = false;
+            bool goodQualityTrack = true;
+            if (!(mu.isTrackerMuon() && mu.numberOfMatchedStations()>0)) isBadTrkMuLoose = true;
+            if (mu.innerTrack().isNonnull()) {
+                goodQualityTrack = (mu.innerTrack()->numberOfValidHits()>=10||(mu.innerTrack()->numberOfValidHits()>=7 && mu.innerTrack()->numberOfLostHits()==0));
+            }
+            return (isBadTrkMuLoose || !goodQualityTrack);
+        }
 };
 
 BadGlobalMuonTagger::BadGlobalMuonTagger(const edm::ParameterSet & iConfig) :
@@ -55,7 +64,13 @@ BadGlobalMuonTagger::BadGlobalMuonTagger(const edm::ParameterSet & iConfig) :
     taggingMode_(iConfig.getParameter<bool> ("taggingMode")),
     verbose_(iConfig.getUntrackedParameter<bool> ("verbose",true))
 {
-    produces<edm::PtrVector<reco::Muon>>("bad");
+	if (selectClones_) {
+		produces<bool>("dup");
+	}
+	else {
+		produces<bool>("bad");
+		produces<bool>("badTrk");
+	}
 }
 
 
@@ -71,11 +86,12 @@ BadGlobalMuonTagger::filter(edm::Event & iEvent, const edm::EventSetup & iSetup)
     iEvent.getByToken(vtx_,  vtx);
     assert(vtx->size() >= 1);
     const auto &PV = vtx->front().position();
- 
-    std::unique_ptr<edm::PtrVector<reco::Muon>> out(new edm::PtrVector<reco::Muon>());
+
     iEvent.getByToken(muons_,  hmuons);
     const edm::View<reco::Muon> & muons = *hmuons;
+    bool foundBadTrk = false;
     for (const reco::Muon & mu : muons) {
+        if(!selectClones_ and !foundBadTrk and badTrk(mu)) foundBadTrk = true;
         if (!mu.isPFMuon() || mu.innerTrack().isNull()) {
             goodMuon.push_back(-1); // bad but we don't care
             continue;
@@ -97,32 +113,39 @@ BadGlobalMuonTagger::filter(edm::Event & iEvent, const edm::EventSetup & iSetup)
         }
     }
 
-    bool found = false;
+    bool foundBad = false;
+    bool foundDup = false;
     for (unsigned int i = 0, n = muons.size(); i < n; ++i) {
+        if(!verbose_ and (selectClones_ ? foundDup : foundBad)) break; //end loop if we know the event is bad
         if (muons[i].pt() < ptCut_ || goodMuon[i] != 0) continue;
         if (verbose_) printf("potentially bad muon %d of pt %.1f eta %+.3f phi %+.3f\n", int(i+1), muons[i].pt(), muons[i].eta(), muons[i].phi());
-        bool bad = true;
+        foundBad = true;
         if (selectClones_) {
-            bad = false; // unless proven otherwise
             unsigned int n1 = muons[i].numberOfMatches(reco::Muon::SegmentArbitration);
             for (unsigned int j = 0; j < n; ++j) {
                 if (j == i || goodMuon[j] <= 0 || !partnerId(muons[j])) continue;
                 unsigned int n2 = muons[j].numberOfMatches(reco::Muon::SegmentArbitration);
                 if (deltaR2(muons[i],muons[j]) < 0.16 || (n1 > 0 && n2 > 0 && muon::sharedSegments(muons[i],muons[j]) >= 0.5*std::min(n1,n2))) {
                     if (verbose_) printf("     tagged as clone of muon %d of pt %.1f eta %+.3f phi %+.3f\n", int(j+1), muons[j].pt(), muons[j].eta(), muons[j].phi());
-                    bad = true;
+                    foundDup = true;
                     break;
                 } 
             }
         }
-        if (bad) {
-            found = true;
-            out->push_back(muons.ptrAt(i));
-        }
     }
 
-    iEvent.put(std::move(out), "bad");
-    return taggingMode_ || found;
+	if (selectClones_) {
+		auto outDup = std::make_unique<bool>(foundDup);
+		iEvent.put(std::move(outDup), "dup");
+		return taggingMode_ || foundDup;
+	}
+	else {
+		auto outBad = std::make_unique<bool>(foundBad);
+		auto outBadTrk = std::make_unique<bool>(foundBadTrk);
+		iEvent.put(std::move(outBad), "bad");
+		iEvent.put(std::move(outBadTrk), "badTrk");
+		return taggingMode_ || foundBad;
+	}
 }
 
 
