@@ -46,13 +46,17 @@ class BadGlobalMuonTagger : public edm::stream::EDFilter<> {
             return mu.pt() >= 10 && mu.numberOfMatchedStations() >= 1;
         }
         bool badTrk(const reco::Muon &mu) const {
-            bool isBadTrkMuLoose = false;
-            bool goodQualityTrack = true;
-            if (!(mu.isPFMuon() && mu.isTrackerMuon() && mu.numberOfMatchedStations()>0)) isBadTrkMuLoose = true;
-            if (mu.innerTrack().isNonnull()) {
-                goodQualityTrack = (mu.innerTrack()->numberOfValidHits()>=10||(mu.innerTrack()->numberOfValidHits()>=7 && mu.innerTrack()->numberOfLostHits()==0));
-            }
-            return (isBadTrkMuLoose || !goodQualityTrack);
+			bool isBadTrackerMuon = false;
+			if (mu.isPFMuon() && mu.isTrackerMuon() && mu.numberOfMatchedStations()>0) {
+				if (mu.innerTrack().isNonnull()) {
+					bool goodQualityTrack = (mu.innerTrack()->numberOfValidHits()>=10) || (mu.innerTrack()->numberOfValidHits()>=7 && mu.innerTrack()->numberOfLostHits()==0);
+					if (!goodQualityTrack) isBadTrackerMuon = true;
+				}
+				else {
+					isBadTrackerMuon = true;
+				}
+			}
+			return isBadTrackerMuon;
         }
 };
 
