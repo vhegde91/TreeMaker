@@ -81,6 +81,8 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
                           "Switch for data/MC processing", Type=bool)
         self.addParameter(self._defaultParameters, 'onMiniAOD', False,
                           "Switch on miniAOD configuration", Type=bool)
+        self.addParameter(self._defaultParameters, 'repro80X', False,
+                          "Switch to recalc MET from an existing jet collection, no reclustering", Type=bool)
         self.addParameter(self._defaultParameters, 'postfix', '',
                           "Technical parameter to identify the resulting sequence and its modules (allows multiple calls in a job)", Type=str)
 
@@ -126,6 +128,7 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
                  CHS                     =None,
                  runOnData               =None,
                  onMiniAOD               =None,
+                 repro80X                =None,
                  postfix                 =None):
         electronCollection = self.initializeInputTag(electronCollection, 'electronCollection')
         photonCollection = self.initializeInputTag(photonCollection, 'photonCollection')
@@ -189,6 +192,8 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
             runOnData = self._defaultParameters['runOnData'].value
         if onMiniAOD is None :
             onMiniAOD = self._defaultParameters['onMiniAOD'].value
+        if repro80X is None :
+            repro80X = self._defaultParameters['repro80X'].value
         if postfix is None :
             postfix = self._defaultParameters['postfix'].value
 
@@ -217,6 +222,7 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
         self.setParameter('recoMetFromPFCs',recoMetFromPFCs),
         self.setParameter('runOnData',runOnData),
         self.setParameter('onMiniAOD',onMiniAOD),
+        self.setParameter('repro80X',repro80X),
         self.setParameter('postfix',postfix),
 
         #if mva/puppi MET, autoswitch to std jets
@@ -247,6 +253,11 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
         #overwriting of jet reclustering parameter for puppi
         if self._parameters["Puppi"].value and not onMiniAOD:
             self.setParameter('reclusterJets',False)
+
+        #option to recompute MET without reclustering
+        if repro80X:
+            self.setParameter('reclusterJets',False)
+            self.setParameter('recoMetFromPFCs',True)
 
         #jet collection overloading for automatic jet reclustering or JEC application
         if reclusterJets:
@@ -280,6 +291,7 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
         reapplyJEC              = self._parameters['reapplyJEC'].value
         reclusterJets           = self._parameters['reclusterJets'].value
         onMiniAOD               = self._parameters['onMiniAOD'].value
+        repro80X                = self._parameters['repro80X'].value
         postfix                 = self._parameters['postfix'].value
         
         #prepare jet configuration
@@ -554,6 +566,7 @@ class RunMETCorrectionsAndUncertainties(ConfigToolBase):
             if postfix=="NoHF":
                 getattr(process, "pat"+metType+"Met"+postfix).computeMETSignificance = cms.bool(False)
             if self._parameters["runOnData"].value:
+                from RecoMET.METProducers.METSignificanceParams_cfi import METSignificanceParams_Data
                 getattr(process, "pat"+metType+"Met"+postfix).parameters = METSignificanceParams_Data
             if self._parameters["Puppi"].value:
                 getattr(process, "pat"+metType+"Met"+postfix).srcPFCands = cms.InputTag('puppiForMET')
@@ -1620,6 +1633,7 @@ def runMetCorAndUncForMiniAODProduction(process, metType="PF",
                                         jecUnFile="",
                                         jetFlavor="AK4PFchs",
                                         recoMetFromPFCs=False,
+                                        repro80X=False,
                                         postfix=""):
 
     runMETCorrectionsAndUncertainties = RunMETCorrectionsAndUncertainties()
@@ -1641,6 +1655,7 @@ def runMetCorAndUncForMiniAODProduction(process, metType="PF",
                                       jetSelection=jetSelection,
                                       jetFlavor=jetFlavor,
                                       recoMetFromPFCs=recoMetFromPFCs,
+                                      repro80X=repro80X,
                                       postfix=postfix
                                       )
     
@@ -1661,6 +1676,7 @@ def runMetCorAndUncForMiniAODProduction(process, metType="PF",
                                       jetSelection=jetSelection,
                                       jetFlavor=jetFlavor,
                                       recoMetFromPFCs=recoMetFromPFCs,
+                                      repro80X=repro80X,
                                       postfix=postfix
                                       )
     
@@ -1681,6 +1697,7 @@ def runMetCorAndUncForMiniAODProduction(process, metType="PF",
                                       jetSelection=jetSelection,
                                       jetFlavor=jetFlavor,
                                       recoMetFromPFCs=recoMetFromPFCs,
+                                      repro80X=repro80X,
                                       postfix=postfix,
                                       )
 
@@ -1707,6 +1724,7 @@ def runMetCorAndUncFromMiniAOD(process, metType="PF",
 ##                               jecUncFile="CondFormats/JetMETObjects/data/Summer15_50nsV5_DATA_UncertaintySources_AK4PFchs.txt",
                                CHS=False,
                                jecUncFile="",
+                               repro80X=False,
                                postfix=""):
 
     runMETCorrectionsAndUncertainties = RunMETCorrectionsAndUncertainties()
@@ -1735,6 +1753,7 @@ def runMetCorAndUncFromMiniAOD(process, metType="PF",
                                       jetCorLabelL3Res=jetCorLabelRes,
                                       jecUncertaintyFile=jecUncFile,
                                       CHS=CHS,
+                                      repro80X=repro80X,
                                       postfix=postfix,
                                       )
     
@@ -1762,6 +1781,7 @@ def runMetCorAndUncFromMiniAOD(process, metType="PF",
                                       jetCorLabelL3Res=jetCorLabelRes,
                                       jecUncertaintyFile=jecUncFile,
                                       CHS=CHS,
+                                      repro80X=repro80X,
                                       postfix=postfix,
                                       )
     #MET T1+Smear + uncertainties
@@ -1788,5 +1808,6 @@ def runMetCorAndUncFromMiniAOD(process, metType="PF",
                                       jetCorLabelL3Res=jetCorLabelRes,
                                       jecUncertaintyFile=jecUncFile,
                                       CHS=CHS,
+                                      repro80X=repro80X,
                                       postfix=postfix,
                                       )
