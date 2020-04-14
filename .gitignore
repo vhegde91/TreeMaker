@@ -15,3 +15,4 @@ jobExecCondor_*.jdl
 jobExecCondorNeff_*.jdl
 *.tar.gz
 *.log
+*_org
