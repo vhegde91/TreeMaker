@@ -1,0 +1,1 @@
+../condorSub/dict_2018B26SepHEM.py
