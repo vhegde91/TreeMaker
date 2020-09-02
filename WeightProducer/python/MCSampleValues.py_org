@@ -1297,9 +1297,6 @@ class MCSampleValuesHelper():
                 XS_13TeV=0.01398, XSSource_13TeV="https://twiki.cern.ch/twiki/bin/viewauth/CMS/SummaryTable1G25ns#Triboson and XSDB, NLO",
             ),
         },
-        "TChiWZ_800_100" : {
-            "CrossSection" : XSValues(XS_13TeV=0.00475843),
-        },
         "SMS-T1bbbb_mGluino-1000_mLSP-900" : {
             "CrossSection" : XSValues(XS_13TeV=0.385E+00),
         },
