@@ -1,6 +1,9 @@
 flist = {
     "scenario": "Autumn18Fastsig",
     "samples": [
+        ['Autumn18Fast.SMS-TChiWH_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18Fast.SMS-TChiWZ_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18Fast.SMS-TChipmWW_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18Fast.SMS-T1tttt_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18Fast.SMS-T1bbbb_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18Fast.SMS-T1qqqq_TuneCP2_13TeV-madgraphMLM-pythia8'],
@@ -18,6 +21,7 @@ flist = {
         # ['Autumn18Fast.SMS-TChiHH_HToBB_HToBB_2D_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18Fast.SMS-TChiWZ_PrivSamples'],
         # ['Autumn18Fast.SMS-TChiWH_PrivSamples'],
-        ['Autumn18Fast.SMS-TChiWW_PrivSamples'],      
+        # ['Autumn18Fast.SMS-TChiWW_PrivSamples'],      
+        
     ]
 }

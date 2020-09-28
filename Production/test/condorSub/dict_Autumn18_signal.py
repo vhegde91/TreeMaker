@@ -1,6 +1,14 @@
 flist = {
     "scenario": "Autumn18sig",
     "samples": [
+        ['Autumn18.SMS-TChiWH_mNLSP-400_mLSP-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18.SMS-TChiWH_mNLSP-400_mLSP-200_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18.SMS-TChiWH_mNLSP-800_mLSP-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        # ['Autumn18.SMS-TChiWH_mNLSP-800_mLSP-400_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18.SMS-TChiWZ_mNLSP-400_mLSP-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18.SMS-TChiWZ_mNLSP-400_mLSP-200_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18.SMS-TChiWZ_mNLSP-800_mLSP-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
+        ['Autumn18.SMS-TChiWZ_mNLSP-800_mLSP-400_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18.RPV_2t6j_mStop-300_mN1-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18.RPV_2t6j_mStop-350_mN1-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
         # ['Autumn18.RPV_2t6j_mStop-400_mN1-100_TuneCP2_13TeV-madgraphMLM-pythia8'],
@@ -70,6 +78,6 @@ flist = {
 	# ['Autumn18.StealthSHH_2t4b_mStop-1300_mSo-100_TuneCP2_13TeV-madgraphMLM-pythia8_cff.py'],
 	# ['Autumn18.StealthSHH_2t4b_mStop-1350_mSo-100_TuneCP2_13TeV-madgraphMLM-pythia8_cff.py'],
 	# ['Autumn18.StealthSHH_2t4b_mStop-1400_mSo-100_TuneCP2_13TeV-madgraphMLM-pythia8_cff.py'],
-	['Autumn18.TChiWZ_800_100_cff.py'],
+	# ['Autumn18.TChiWZ_800_100_cff.py'],
     ]
 }
