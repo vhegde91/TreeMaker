@@ -1,0 +1,4 @@
+        MCSample('ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8', 'PUMoriond17_94X_mcRun2_asymptotic_v3-v2', 'RunIISummer16MiniAODv3', 'Constant', 2009042, False, 1268806),
+        MCSample('ZGTo2NuG_TuneCP5_13TeV-amcatnloFXFX-pythia8', 'PU2017_12Apr2018_94X_mc2017_realistic_v14-v1', 'RunIIFall17MiniAODv2', 'Constant', 2597726, False, 1658936),
+        MCSample('ZGTo2NuG_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 3333072, False, 2127658),
+        MCSample('WGJets_MonoPhoton_PtG-40to130_TuneCP5_13TeV-madgraph', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 4793792, False, 4791656),

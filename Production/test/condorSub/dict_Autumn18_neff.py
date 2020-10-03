@@ -4,6 +4,12 @@
 #     print  "\'"+f.replace("_cff.py","").replace("/",".")+"\',"
 
 flist = [
+'Autumn18.ZGTo2NuG_TuneCP5_13TeV-amcatnloFXFX-pythia8',
+'Autumn18.WGJets_MonoPhoton_PtG-40to130_TuneCP5_13TeV-madgraph'
+'Autumn18.WGJets_MonoPhoton_PtG-130_TuneCP5_13TeV-madgraph',
+'Autumn18.WWG_TuneCP5_13TeV-amcatnlo-pythia8_ext1',
+'Autumn18.WZG_TuneCP5_13TeV-amcatnlo-pythia8',
+'Autumn18.ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8',
 'Autumn18.DYJetsToLL_M-50_HT-100to200_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8',
 'Autumn18.DYJetsToLL_M-50_HT-200to400_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8',
 'Autumn18.DYJetsToLL_M-50_HT-400to600_TuneCP5_PSweights_13TeV-madgraphMLM-pythia8',

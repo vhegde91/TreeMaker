@@ -1101,6 +1101,26 @@ class MCSampleValuesHelper():
                 XS_2018=0.7153, XSSource_2018="GenXSecAnalyzer",
             ),
         },
+        "WWG" : {
+            "CrossSection" : XSValues(
+                XS_13TeV=0.2147, XSSource_13TeV="https://twiki.cern.ch/twiki/bin/viewauth/CMS/SummaryTable1G25ns#Triboson",
+            ),
+        },
+        "WZG" : {
+            "CrossSection" : XSValues(
+                XS_13TeV=0.04123, XSSource_13TeV="https://twiki.cern.ch/twiki/bin/viewauth/CMS/SummaryTable1G25ns#Triboson",
+            ),
+        },
+        "ZH_HToBB_ZToNuNu_M125" : {
+            "CrossSection" : XSValues(
+                XS_13TeV=0.10299357, XSSource_13TeV="BR of H->bb from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBR with H-mass 125.09 GeV, xsec from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV#ZHllH_H_l_e_or_Process",
+            ),
+        },
+        "WH_HToBB_WToLNu_M125" : {
+            "CrossSection" : XSValues(
+                XS_13TeV=1.373, XSSource_13TeV="https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV#ppWH_Total_Cross_Section_with_ap",
+            ),
+        },
         "WWTo1L1Nu2Q" : {
             "CrossSection" : XSValues(
                 XS_2016=45.68, XSSource_2016="XSDB (LO)",
@@ -1124,7 +1144,7 @@ class MCSampleValuesHelper():
         },
         "ZGTo2NuG" : {
             "CrossSection" : XSValues(
-                XS_2016=28.04, XSSource_2016="XSDB (unknown)",
+                XS_13TeV=32.3, XSSource_13TeV="MCM",
             ),
         },
         "ZZTo2L2Nu" : {
@@ -1144,6 +1164,8 @@ class MCSampleValuesHelper():
         "ZZTo2Q2Nu" : {
             "CrossSection" : XSValues(
                 XS_2016=4.033, XSSource_2016="XSDB (unknown)",
+                XS_2017=4.416, XSSource_2017="MCM",
+                XS_2018=4.416, XSSource_2018="MCM",
             ),
         },
         "TTZToLLNuNu_M-10" : {

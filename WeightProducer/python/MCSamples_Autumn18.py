@@ -104,6 +104,12 @@ Autumn18samples = [
     MCSample('ZZTo2L2Nu_TuneCP5_13TeV_powheg_pythia8', '102X_upgrade2018_realistic_v15_ext2-v2', 'RunIIAutumn18MiniAOD', 'Constant', 56428600, False, 56356040), # subtotal = 47984288, straight subtotal = 48046000
     MCSample('ZZTo2Q2Nu_TuneCP5_13TeV_amcatnloFXFX_madspin_pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 57728992, False, 36452112),
     MCSample('ZZTo2L2Q_13TeV_amcatnloFXFX_madspin_pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 27900469, False, 17815224),
+    MCSample('WGJets_MonoPhoton_PtG-40to130_TuneCP5_13TeV-madgraph', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 4793792, False, 4791656),
+    MCSample('WGJets_MonoPhoton_PtG-130_TuneCP5_13TeV-madgraph', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 5087214, False, 5077532),
+    MCSample('ZGTo2NuG_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 3333072, False, 2127658),
+    MCSample('WWG_TuneCP5_13TeV-amcatnlo-pythia8', '102X_upgrade2018_realistic_v15_ext1-v2', 'RunIIAutumn18MiniAOD', 'Constant', 1250000, False, 1030714),
+    MCSample('WZG_TuneCP5_13TeV-amcatnlo-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 1960000, False, 1647844),
+    MCSample('ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 4566230, False, 4300242),
     MCSample('TTGJets_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 4691915, False, 1842387),
     MCSample('TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8', '102X_upgrade2018_realistic_v15_ext1-v2', 'RunIIAutumn18MiniAOD', 'Constant', 4911941, False, 2686095),
     MCSample('TTWJetsToQQ_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 835296, False, 458226),

@@ -1,0 +1,1 @@
+../condorSub/dict_Autumn18Fast_signal.py

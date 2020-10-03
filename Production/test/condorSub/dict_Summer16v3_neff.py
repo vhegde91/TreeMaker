@@ -1,4 +1,9 @@
 flist = [
+'Summer16v3.ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8',
+'Summer16v3.WWG_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext1',
+'Summer16v3.WZG_TuneCUETP8M1_13TeV-amcatnlo-pythia8',
+'Summer16v3.ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_ext1',
+'Summer16v3.WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8',
 'Summer16v3.TTGJets_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8',
 'Summer16v3.TTGJets_TuneCUETP8M1_13TeV-amcatnloFXFX-madspin-pythia8_ext1',
 'Summer16v3.TTGamma_Dilept_TuneCUETP8M2T4_13TeV-amcatnlo-pythia8',
