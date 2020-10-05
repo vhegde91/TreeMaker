@@ -70,6 +70,16 @@ Autumn18samples = [
     MCSample('WJetsToLNu_HT-70To100_TuneCP5_13TeV-madgraphMLM-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 28084244, False, 28060304),
     MCSample('WJetsToLNu_HT-800To1200_TuneCP5_13TeV-madgraphMLM-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 8402687, False, 8362227),
     MCSample('WJetsToLNu_HT-1200To2500_TuneCP5_13TeV-madgraphMLM-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 7633949, False, 7571583),
+    MCSample('WJetsToLNu_Wpt-0To50_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 115673829, False, 81538080),
+    MCSample('WJetsToLNu_Pt-50To100_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 19671032, False, 7275588),
+    MCSample('WJetsToLNu_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 510456187, False, 189118744), # subtotal = 36673944, straight subtotal = 99017385
+    MCSample('WJetsToLNu_Pt-100To250_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15_ext1-v1', 'RunIIAutumn18MiniAOD', 'Constant', 510456187, False, 189118744), # subtotal = 152444800, straight subtotal = 411438802
+    MCSample('WJetsToLNu_Pt-250To400_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 108739439, False, 42449238), # subtotal = 3801794, straight subtotal = 9747942
+    MCSample('WJetsToLNu_Pt-250To400_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15_ext1-v2', 'RunIIAutumn18MiniAOD', 'Constant', 108739439, False, 42449238), # subtotal = 38647444, straight subtotal = 98991497
+    MCSample('WJetsToLNu_Pt-400To600_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 12004784, False, 4988448), # subtotal = 817560, straight subtotal = 1967802
+    MCSample('WJetsToLNu_Pt-400To600_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15_ext1-v1', 'RunIIAutumn18MiniAOD', 'Constant', 12004784, False, 4988448), # subtotal = 4170888, straight subtotal = 10036982
+    MCSample('WJetsToLNu_Pt-600ToInf_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 3898092, False, 1634340), # subtotal = 816608, straight subtotal = 1950016
+    MCSample('WJetsToLNu_Pt-600ToInf_TuneCP5_13TeV-amcatnloFXFX-pythia8', '102X_upgrade2018_realistic_v15_ext1-v1', 'RunIIAutumn18MiniAOD', 'Constant', 3898092, False, 1634340), # subtotal = 817732, straight subtotal = 1948076
     MCSample('WJetsToQQ_HT400to600_qc19_3j_TuneCP5_13TeV-madgraphMLM-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 10071273, False, 10050037),
     MCSample('WJetsToQQ_HT600to800_qc19_3j_TuneCP5_13TeV-madgraphMLM-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 15298056, False, 15253718),
     MCSample('WJetsToQQ_HT-800toInf_qc19_3j_TuneCP5_13TeV-madgraphMLM-pythia8', '102X_upgrade2018_realistic_v15-v1', 'RunIIAutumn18MiniAOD', 'Constant', 14627242, False, 14561238),

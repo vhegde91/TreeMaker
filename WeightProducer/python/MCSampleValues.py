@@ -417,6 +417,54 @@ class MCSampleValuesHelper():
                 XS_2018=52850.0, XSSource_2018="XSDB (LO)",
             ),
         },
+        "WJetsToLNu_Wpt-0To50" : {
+            "CrossSection" : XSValues(
+                XS_2018=61850.0, XSSource_2018="XSDB (NLO)",
+            ),
+            "kFactor" : kFactorValues(
+                kFactor_2018=0.929, kFactorSource_2018="XSDB NNLO/LO=61526.7/66231.2",
+            ),
+        },
+        "WJetsToLNu_Pt-50To100" : {
+            "CrossSection" : XSValues(
+                XS_2018=3570.0, XSSource_2018="XSDB (NLO)",
+            ),
+            "kFactor" : kFactorValues(
+                kFactor_2018=0.929, kFactorSource_2018="XSDB NNLO/LO=61526.7/66231.2",
+            ),
+        },
+        "WJetsToLNu_Pt-100To250" : {
+            "CrossSection" : XSValues(
+                XS_2018=779.1, XSSource_2018="XSDB (NLO)",
+            ),
+            "kFactor" : kFactorValues(
+                kFactor_2018=0.929, kFactorSource_2018="XSDB NNLO/LO=61526.7/66231.2",
+            ),
+        },
+        "WJetsToLNu_Pt-250To400" : {
+            "CrossSection" : XSValues(
+                XS_2018=27.98, XSSource_2018="XSDB (NLO)",
+            ),
+            "kFactor" : kFactorValues(
+                kFactor_2018=0.929, kFactorSource_2018="XSDB NNLO/LO=61526.7/66231.2",
+            ),
+        },
+        "WJetsToLNu_Pt-400To600" : {
+            "CrossSection" : XSValues(
+                XS_2018=3.604, XSSource_2018="XSDB (NLO)",
+            ),
+            "kFactor" : kFactorValues(
+                kFactor_2018=0.929, kFactorSource_2018="XSDB NNLO/LO=61526.7/66231.2",
+            ),
+        },
+        "WJetsToLNu_Pt-600ToInf" : {
+            "CrossSection" : XSValues(
+                XS_2018=0.5545, XSSource_2018="XSDB (NLO)",
+            ),
+            "kFactor" : kFactorValues(
+                kFactor_2018=0.929, kFactorSource_2018="XSDB NNLO/LO=61526.7/66231.2",
+            ),
+        },
         "WJetsToQQ_HT400to600_qc19_3j" : {
             "CrossSection" : XSValues(
                 XS_2017=315.2, XSSource_2017="GenXSecAnalyzer",
