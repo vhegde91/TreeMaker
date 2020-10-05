@@ -1,6 +1,11 @@
 flist = {
     "scenario": "Summer16v3",
     "samples": [
+        ['Summer16v3.ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8'],
+        ['Summer16v3.WWG_TuneCUETP8M1_13TeV-amcatnlo-pythia8_ext1'],
+        ['Summer16v3.WZG_TuneCUETP8M1_13TeV-amcatnlo-pythia8'],
+        ['Summer16v3.ZH_HToBB_ZToNuNu_M125_13TeV_powheg_pythia8_ext1'],
+        ['Summer16v3.WH_HToBB_WToLNu_M125_13TeV_amcatnloFXFX_madspin_pythia8'],
         ['Summer16v3.WGJets_MonoPhoton_PtG-40to130_TuneCUETP8M1_13TeV-madgraph'],
         ['Summer16v3.WGJets_MonoPhoton_PtG-130_TuneCUETP8M1_13TeV-madgraph'],
         ['Summer16v3.WWTo1L1Nu2Q_13TeV_amcatnloFXFX_madspin_pythia8'],

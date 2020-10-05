@@ -4,7 +4,7 @@
 #     print  "\'"+f.replace("_cff.py","").replace("/",".")+"\',"
 
 flist = [
-'Fall17.ZGTo2NuG_TuneCP5_13TeV-amcatnloFXFX-pythia8'
+'Fall17.ZGTo2NuG_TuneCP5_13TeV-amcatnloFXFX-pythia8',
 'Fall17.WGJets_MonoPhoton_PtG-130_TuneCP5_13TeV-madgraph',
 'Fall17.WWG_TuneCP5_13TeV-amcatnlo-pythia8',
 'Fall17.WZG_TuneCP5_13TeV-amcatnlo-pythia8',
